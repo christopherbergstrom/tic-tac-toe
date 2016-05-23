@@ -105,6 +105,7 @@ function createBoard(questionBox)
       array[0][0]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -133,6 +134,7 @@ function createBoard(questionBox)
       array[0][1]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -164,6 +166,7 @@ function createBoard(questionBox)
       array[0][2]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -198,6 +201,7 @@ function createBoard(questionBox)
       array[1][0]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -227,6 +231,7 @@ function createBoard(questionBox)
       array[1][1]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -255,6 +260,7 @@ function createBoard(questionBox)
       array[1][2]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -290,6 +296,7 @@ function createBoard(questionBox)
       array[2][0]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -318,6 +325,7 @@ function createBoard(questionBox)
       array[2][1]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -347,6 +355,7 @@ function createBoard(questionBox)
       array[2][2]=player1Symbol;
       checkWin();
       compMove();
+      checkWin();
     }
     else if (numPlayers === 2)
     {
@@ -554,6 +563,9 @@ function checkWin()
   }
   if (win === true)
   {
+    console.log(array[0].length);
+    console.log(array[1].length);
+    console.log(array[2].length);
     alert(who+" wins!");
     location.reload();
   }
@@ -567,132 +579,500 @@ function compMove()
 {
   console.log(array);
   //top
-  if (array[0][0] === array[0][1] && array[0][2] === "")
+  if (array[0][0] === player1Symbol && array[0][1] === player1Symbol && array[0][2] === "")
   {
+    console.log("here");
     array[0][2]=player2Symbol;
     col02.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][0] === array[0][2] && array[0][1] === "")
+  else if (array[0][0] === player1Symbol && array[0][2] === player1Symbol && array[0][1] === "")
   {
+    console.log("here");
     array[0][1]=player2Symbol;
     col01.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][1] === array[0][2] && array[0][0] === "")
+  else if (array[0][1] === player1Symbol && array[0][2] === player1Symbol && array[0][0] === "")
   {
+    console.log("here");
     array[0][0]=player2Symbol;
     col00.innerHTML=player2Symbol;
+    return;
   }
   //middle horazontal
-  if (array[1][0] === array[1][1] && array[1][2] === "")
+  if (array[1][0] === player1Symbol && array[1][1] === player1Symbol && array[1][2] === "")
   {
+    console.log("here");
     array[1][2]=player2Symbol;
     col12.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][0] === array[1][2] && array[1][1] === "")
+  else if (array[1][0] === player1Symbol && array[1][2] === player1Symbol && array[1][1] === "")
   {
+    console.log("here");
     array[1][1]=player2Symbol;
     col11.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][1] === array[1][2] && array[1][0] === "")
+  else if (array[1][1] === player1Symbol && array[1][2] === player1Symbol && array[1][0] === "")
   {
+    console.log("here");
     array[1][0]=player2Symbol;
     col10.innerHTML=player2Symbol;
+    return;
   }
   //bottom
-  if (array[2][0] === array[2][1] && array[2][2] === "")
+  if (array[2][0] === player1Symbol && array[2][1] === player1Symbol && array[2][2] === "")
   {
+    console.log("here");
     array[2][2]=player2Symbol;
     col22.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[2][0] === array[2][2] && array[2][1] === "")
+  else if (array[2][0] === player1Symbol && array[2][2] === player1Symbol && array[2][1] === "")
   {
+    console.log("here");
     array[2][1]=player2Symbol;
     col21.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[2][1] === array[2][2] && array[2][0] === "")
+  else if (array[2][1] === player1Symbol && array[2][2] === player1Symbol && array[2][0] === "")
   {
+    console.log("here");
     array[2][0]=player2Symbol;
     col20.innerHTML=player2Symbol;
+    return;
   }
   //left
-  if (array[0][0] === array[1][0] && array[2][0] === "")
+  if (array[0][0] === player1Symbol && array[1][0] === player1Symbol && array[2][0] === "")
   {
+    console.log("here");
     array[2][0]=player2Symbol;
     col20.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][0] === array[2][0] && array[1][0] === "")
+  else if (array[0][0] === player1Symbol && array[2][0] === player1Symbol && array[1][0] === "")
   {
+    console.log("here");
     array[1][0]=player2Symbol;
     col10.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][0] === array[2][0] && array[0][0] === "")
+  else if (array[1][0] === player1Symbol && array[2][0] === player1Symbol && array[0][0] === "")
   {
+    console.log("here");
     array[0][0]=player2Symbol;
     col00.innerHTML=player2Symbol;
+    return;
   }
   //middle vertical
-  if (array[0][1] === array[1][1] && array[2][1] === "")
+  if (array[0][1] === player1Symbol && array[1][1] === player1Symbol && array[2][1] === "")
   {
+    console.log("here");
     array[2][1]=player2Symbol;
     col21.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][1] === array[2][1] && array[1][1] === "")
+  else if (array[0][1] === player1Symbol && array[2][1] === player1Symbol && array[1][1] === "")
   {
+    console.log("here");
     array[1][1]=player2Symbol;
     col11.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][1] === array[2][1] && array[0][1] === "")
+  else if (array[1][1] === player1Symbol && array[2][1] === player1Symbol && array[0][1] === "")
   {
+    console.log("here");
     array[0][1]=player2Symbol;
     col01.innerHTML=player2Symbol;
+    return;
   }
   //right
-  if (array[0][2] === array[1][2] && array[2][2] === "")
+  if (array[0][2] === player1Symbol && array[1][2] === player1Symbol && array[2][2] === "")
   {
+    console.log("here");
     array[2][2]=player2Symbol;
     col22.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][2] === array[2][2] && array[1][2] === "")
+  else if (array[0][2] === player1Symbol && array[2][2] === player1Symbol && array[1][2] === "")
   {
+    console.log("here");
     array[1][2]=player2Symbol;
     col12.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][2] === array[2][2] && array[0][2] === "")
+  else if (array[1][2] === player1Symbol && array[2][2] === player1Symbol && array[0][2] === "")
   {
+    console.log("here");
     array[0][2]=player2Symbol;
     col02.innerHTML=player2Symbol;
+    return;
   }
-  //diagonal top left
-  if (array[0][0] === array[1][1] && array[2][2] === "")
+  //diagonal top left to bottom right
+  if (array[0][0] === player1Symbol && array[1][1] === player1Symbol && array[2][2] === "")
   {
+    console.log("here");
     array[2][2]=player2Symbol;
     col22.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][0] === array[2][2] && array[1][1] === "")
+  else if (array[0][0] === player1Symbol && array[2][2] === player1Symbol && array[1][1] === "")
   {
+    console.log("here");
     array[1][1]=player2Symbol;
     col11.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][1] === array[2][2] && array[0][0] === "")
+  else if (array[1][1] === player1Symbol && array[2][2] === player1Symbol && array[0][0] === "")
   {
+    console.log("here");
     array[0][0]=player2Symbol;
     col00.innerHTML=player2Symbol;
+    return;
   }
-  //diagonal top right
-  if (array[0][2] === array[1][1] && array[2][0] === "")
+  //diagonal top right to bottom left
+  if (array[0][2] === player1Symbol && array[1][1] === player1Symbol && array[2][0] === "")
   {
+    console.log("here");
     array[2][0]=player2Symbol;
     col20.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[0][2] === array[2][0] && array[1][1] === "")
+  else if (array[0][2] === player1Symbol && array[2][0] === player1Symbol && array[1][1] === "")
   {
+    console.log("here");
     array[1][1]=player2Symbol;
     col11.innerHTML=player2Symbol;
+    return;
   }
-  else if (array[1][1] === array[2][0] && array[0][2] === "")
+  else if (array[1][1] === player1Symbol && array[2][0] === player1Symbol && array[0][2] === "")
   {
+    console.log("here");
     array[0][2]=player2Symbol;
     col02.innerHTML=player2Symbol;
+    return;
   }
-  
+  //if nothing matches
+  //middle
+  if (array[1][1] === player2Symbol)
+  {
+    if (array[0][0] === "")
+    {
+      console.log("here");
+      array[0][0]=player2Symbol;
+      col00.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[0][1] === "")
+    {
+      console.log("here");
+      array[0][1]=player2Symbol;
+      col01.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[0][2] === "")
+    {
+      console.log("here");
+      array[0][2]=player2Symbol;
+      col02.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][0] === "")
+    {
+      console.log("here");
+      array[1][0]=player2Symbol;
+      col10.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][2] === "")
+    {
+      console.log("here");
+      array[1][2]=player2Symbol;
+      col12.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][0] === "")
+    {
+      console.log("here");
+      array[2][0]=player2Symbol;
+      col20.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][1] === "")
+    {
+      console.log("here");
+      array[2][1]=player2Symbol;
+      col21.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][2] === "")
+    {
+      console.log("here");
+      array[2][2]=player2Symbol;
+      col22.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //top left
+  if (array[0][0] === player2Symbol)
+  {
+    if (array[0][1] === "")
+    {
+      console.log("here");
+      array[0][1]=player2Symbol;
+      col01.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][0] === "")
+    {
+      console.log("here");
+      array[1][0]=player2Symbol;
+      col10.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //top right
+  if (array[0][2] === player2Symbol)
+  {
+    if (array[0][1] === "")
+    {
+      console.log("here");
+      array[0][1]=player2Symbol;
+      col01.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][2] === "")
+    {
+      console.log("here");
+      array[1][2]=player2Symbol;
+      col12.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //bottom left
+  if (array[2][0] === player2Symbol)
+  {
+    if (array[1][0] === "")
+    {
+      console.log("here");
+      array[1][0]=player2Symbol;
+      col10.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][1] === "")
+    {
+      console.log("here");
+      array[2][1]=player2Symbol;
+      col21.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //bottom right
+  if (array[2][2] === player2Symbol)
+  {
+    if (array[1][2] === "")
+    {
+      console.log("here");
+      array[1][2]=player2Symbol;
+      col12.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][1] === "")
+    {
+      console.log("here");
+      array[2][1]=player2Symbol;
+      col21.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //top middle
+  if (array[0][1] === player2Symbol)
+  {
+    if (array[0][0] === "")
+    {
+      console.log("here");
+      array[0][0]=player2Symbol;
+      col00.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[0][2] === "")
+    {
+      console.log("here");
+      array[0][2]=player2Symbol;
+      col02.innerHTML=player2Symbol;
+      return;
+    }
+    //odds
+    else if (array[1][0] === "")
+    {
+      console.log("here");
+      array[1][0]=player2Symbol;
+      col10.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][2] === "")
+    {
+      console.log("here");
+      array[1][2]=player2Symbol;
+      col12.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //left middle
+  if (array[1][0] === player2Symbol)
+  {
+    if (array[0][0] === "")
+    {
+      console.log("here");
+      array[0][0]=player2Symbol;
+      col00.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][0] === "")
+    {
+      console.log("here");
+      array[2][0]=player2Symbol;
+      col20.innerHTML=player2Symbol;
+      return;
+    }
+    //odds
+    else if (array[0][1] === "")
+    {
+      console.log("here");
+      array[0][1]=player2Symbol;
+      col01.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][1] === "")
+    {
+      console.log("here");
+      array[2][1]=player2Symbol;
+      col21.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //right middle
+  if (array[1][0] === player2Symbol)
+  {
+    if (array[0][2] === "")
+    {
+      console.log("here");
+      array[0][2]=player2Symbol;
+      col02.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][2] === "")
+    {
+      console.log("here");
+      array[2][2]=player2Symbol;
+      col22.innerHTML=player2Symbol;
+      return;
+    }
+    //odds
+    else if (array[0][1] === "")
+    {
+      console.log("here");
+      array[0][1]=player2Symbol;
+      col01.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][1] === "")
+    {
+      console.log("here");
+      array[2][1]=player2Symbol;
+      col21.innerHTML=player2Symbol;
+      return;
+    }
+  }
+  //bottom middle
+  if (array[2][1] === player2Symbol)
+  {
+    if (array[2][0] === "")
+    {
+      console.log("here");
+      array[2][0]=player2Symbol;
+      col20.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][1] === "")
+    {
+      console.log("here");
+      array[1][1]=player2Symbol;
+      col11.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[2][2] === "")
+    {
+      console.log("here");
+      array[2][2]=player2Symbol;
+      col22.innerHTML=player2Symbol;
+      return;
+    }
+    //odds
+    else if (array[1][0] === "")
+    {
+      console.log("here");
+      array[1][0]=player2Symbol;
+      col10.innerHTML=player2Symbol;
+      return;
+    }
+    else if (array[1][2] === "")
+    {
+      console.log("here");
+      array[1][2]=player2Symbol;
+      col12.innerHTML=player2Symbol;
+      return;
+    }
+  }
 }
