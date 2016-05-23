@@ -4,6 +4,7 @@ var player1Symbol;
 var player2Symbol;
 var whichTurn;
 var array;
+var count = 0;
 window.onload = function()
 {
   array = [["","",""],["","",""],["","",""],];
@@ -274,49 +275,70 @@ function createBoard(questionBox)
 }
 function checkWin()
 {
+  count++;
+  var win = false;
+  var who = "";
   //Horazontal
   if (array[0][0] === player1Symbol && array[0][1] === player1Symbol && array[0][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[0][0] === player2Symbol && array[0][1] === player2Symbol && array[0][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
   if (array[1][0] === player1Symbol && array[1][1] === player1Symbol && array[1][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[1][0] === player2Symbol && array[1][1] === player2Symbol && array[1][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
   if (array[2][0] === player1Symbol && array[2][1] === player1Symbol && array[2][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[2][0] === player2Symbol && array[2][1] === player2Symbol && array[2][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
@@ -324,46 +346,64 @@ function checkWin()
   //Vertical
   if (array[0][0] === player1Symbol && array[1][0] === player1Symbol && array[2][0] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[0][0] === player2Symbol && array[1][0] === player2Symbol && array[2][0] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
   if (array[0][1] === player1Symbol && array[1][1] === player1Symbol && array[2][1] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[0][1] === player2Symbol && array[1][1] === player2Symbol && array[2][1] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
   if (array[0][2] === player1Symbol && array[1][2] === player1Symbol && array[2][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[0][2] === player2Symbol && array[1][2] === player2Symbol && array[2][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
@@ -371,33 +411,54 @@ function checkWin()
   //Diagonal
   if (array[0][0] === player1Symbol && array[1][1] === player1Symbol && array[2][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[0][0] === player2Symbol && array[1][1] === player2Symbol && array[2][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
   if (array[2][0] === player1Symbol && array[1][1] === player1Symbol && array[0][2] === player1Symbol)
   {
+    win = true;
+    who = "Player 1";
     console.log("player1 wins!");
   }
   else if (array[2][0] === player2Symbol && array[1][1] === player2Symbol && array[0][2] === player2Symbol)
   {
     if (numPlayers === 1)
     {
+      win = true;
+      who = "Computer";
       console.log("computer wins!");
     }
     else if (numPlayers === 2)
     {
+      win = true;
+      who = "Player 2";
       console.log("player2 wins!");
     }
   }
-  console.log(array);
+  if (win === true)
+  {
+    alert(who+" wins!");
+    location.reload();
+  }
+  if (count === 9 && win === false)
+  {
+    alert("Tie!");
+    location.reload();
+  }
 }
