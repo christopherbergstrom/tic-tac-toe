@@ -940,20 +940,20 @@ function compMove()
       return;
     }
     //odds
-    else if (array[1][0] === "")
-    {
-      console.log("here");
-      array[1][0]=player2Symbol;
-      col10.innerHTML=player2Symbol;
-      return;
-    }
-    else if (array[1][2] === "")
-    {
-      console.log("here");
-      array[1][2]=player2Symbol;
-      col12.innerHTML=player2Symbol;
-      return;
-    }
+    // else if (array[1][0] === "")
+    // {
+    //   console.log("here");
+    //   array[1][0]=player2Symbol;
+    //   col10.innerHTML=player2Symbol;
+    //   return;
+    // }
+    // else if (array[1][2] === "")
+    // {
+    //   console.log("here");
+    //   array[1][2]=player2Symbol;
+    //   col12.innerHTML=player2Symbol;
+    //   return;
+    // }
   }
   //left middle
   if (array[1][0] === player2Symbol)
@@ -980,20 +980,20 @@ function compMove()
       return;
     }
     //odds
-    else if (array[0][1] === "")
-    {
-      console.log("here");
-      array[0][1]=player2Symbol;
-      col01.innerHTML=player2Symbol;
-      return;
-    }
-    else if (array[2][1] === "")
-    {
-      console.log("here");
-      array[2][1]=player2Symbol;
-      col21.innerHTML=player2Symbol;
-      return;
-    }
+    // else if (array[0][1] === "")
+    // {
+    //   console.log("here");
+    //   array[0][1]=player2Symbol;
+    //   col01.innerHTML=player2Symbol;
+    //   return;
+    // }
+    // else if (array[2][1] === "")
+    // {
+    //   console.log("here");
+    //   array[2][1]=player2Symbol;
+    //   col21.innerHTML=player2Symbol;
+    //   return;
+    // }
   }
   //right middle
   if (array[1][0] === player2Symbol)
@@ -1020,20 +1020,20 @@ function compMove()
       return;
     }
     //odds
-    else if (array[0][1] === "")
-    {
-      console.log("here");
-      array[0][1]=player2Symbol;
-      col01.innerHTML=player2Symbol;
-      return;
-    }
-    else if (array[2][1] === "")
-    {
-      console.log("here");
-      array[2][1]=player2Symbol;
-      col21.innerHTML=player2Symbol;
-      return;
-    }
+    // else if (array[0][1] === "")
+    // {
+    //   console.log("here");
+    //   array[0][1]=player2Symbol;
+    //   col01.innerHTML=player2Symbol;
+    //   return;
+    // }
+    // else if (array[2][1] === "")
+    // {
+    //   console.log("here");
+    //   array[2][1]=player2Symbol;
+    //   col21.innerHTML=player2Symbol;
+    //   return;
+    // }
   }
   //bottom middle
   if (array[2][1] === player2Symbol)
@@ -1060,19 +1060,114 @@ function compMove()
       return;
     }
     //odds
-    else if (array[1][0] === "")
-    {
-      console.log("here");
-      array[1][0]=player2Symbol;
-      col10.innerHTML=player2Symbol;
-      return;
-    }
-    else if (array[1][2] === "")
-    {
-      console.log("here");
-      array[1][2]=player2Symbol;
-      col12.innerHTML=player2Symbol;
-      return;
-    }
+    // else if (array[1][0] === "")
+    // {
+    //   console.log("here");
+    //   array[1][0]=player2Symbol;
+    //   col10.innerHTML=player2Symbol;
+    //   return;
+    // }
+    // else if (array[1][2] === "")
+    // {
+    //   console.log("here");
+    //   array[1][2]=player2Symbol;
+    //   col12.innerHTML=player2Symbol;
+    //   return;
+    // }
   }
+  //if nothing still matches
+  do
+  {
+    var move = Math.floor(Math.random()*9);
+    if (move === 0)
+    {
+      if (array[0][0] === "")
+      {
+        array[0][0] = player2Symbol;
+        col00.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 1)
+    {
+      if (array[0][1] === "")
+      {
+        array[0][1] = player2Symbol;
+        col01.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 2)
+    {
+      if (array[0][2] === "")
+      {
+        array[0][2] = player2Symbol;
+        col02.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 3)
+    {
+      if (array[1][0] === "")
+      {
+        array[1][0] = player2Symbol;
+        col10.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 4)
+    {
+      if (array[1][1] === "")
+      {
+        array[1][1] = player2Symbol;
+        col11.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 5)
+    {
+      if (array[1][2] === "")
+      {
+        array[1][2] = player2Symbol;
+        col12.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 6)
+    {
+      if (array[2][0] === "")
+      {
+        array[2][0] = player2Symbol;
+        col20.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 7)
+    {
+      if (array[2][1] === "")
+      {
+        array[2][1] = player2Symbol;
+        col21.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+    if (move === 8)
+    {
+      if (array[2][2] === "")
+      {
+        array[2][2] = player2Symbol;
+        col22.innerHTML=player2Symbol;
+        console.log(array);
+        break;
+      }
+    }
+  } while (true);
 }
