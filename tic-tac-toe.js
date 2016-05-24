@@ -14,6 +14,8 @@ var col12;
 var col20;
 var col21;
 var col22;
+var first = true;
+var win = false;
 window.onload = function()
 {
   array = [["","",""],["","",""],["","",""],];
@@ -104,8 +106,11 @@ function createBoard(questionBox)
       col00.innerHTML=player1Symbol;
       array[0][0]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -133,8 +138,11 @@ function createBoard(questionBox)
       col01.innerHTML=player1Symbol;
       array[0][1]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -165,8 +173,11 @@ function createBoard(questionBox)
       col02.innerHTML=player1Symbol;
       array[0][2]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -200,8 +211,11 @@ function createBoard(questionBox)
       col10.innerHTML=player1Symbol;
       array[1][0]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -230,8 +244,11 @@ function createBoard(questionBox)
       col11.innerHTML=player1Symbol;
       array[1][1]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -259,8 +276,11 @@ function createBoard(questionBox)
       col12.innerHTML=player1Symbol;
       array[1][2]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -295,8 +315,11 @@ function createBoard(questionBox)
       col20.innerHTML=player1Symbol;
       array[2][0]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -324,8 +347,11 @@ function createBoard(questionBox)
       col21.innerHTML=player1Symbol;
       array[2][1]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -354,8 +380,11 @@ function createBoard(questionBox)
       col22.innerHTML=player1Symbol;
       array[2][2]=player1Symbol;
       checkWin();
-      compMove();
-      checkWin();
+      if (!win)
+      {
+        compMove();
+        checkWin();
+      }
     }
     else if (numPlayers === 2)
     {
@@ -386,7 +415,7 @@ function createBoard(questionBox)
 function checkWin()
 {
   count++;
-  var win = false;
+  // var win = false;
   var who = "";
   //Horazontal
   if (array[0][0] === player1Symbol && array[0][1] === player1Symbol && array[0][2] === player1Symbol)
@@ -563,17 +592,94 @@ function checkWin()
   }
   if (win === true)
   {
-    console.log(array[0].length);
-    console.log(array[1].length);
-    console.log(array[2].length);
-    alert(who+" wins!");
-    location.reload();
+    deleteBoard();
+    var alert = document.createElement("div");
+    alert.setAttribute("id","alert");
+    alert.innerHTML=who+" wins!";
+    var again = document.createElement("div");
+    again.setAttribute("class","button");
+    again.innerHTML="Play Again?"
+    again.addEventListener("click", function()
+    {
+      location.reload();
+    });
+    container.appendChild(alert);
+    container.appendChild(again);
   }
   if (count === 9 && win === false)
   {
-    alert("Tie!");
-    location.reload();
+    deleteBoard();
+    var alert = document.createElement("div");
+    alert.setAttribute("id","alert");
+    alert.innerHTML="Tie!";
+    var again = document.createElement("div");
+    again.setAttribute("class","button");
+    again.innerHTML="Play Again?"
+    again.addEventListener("click", function()
+    {
+      location.reload();
+    });
+    container.appendChild(alert);
+    container.appendChild(again);
   }
+}
+function deleteBoard()
+{
+  var gameBox = document.getElementById("gameBox");
+  gameBox.parentNode.removeChild(gameBox);
+  var endGameBox = document.createElement("div")
+  endGameBox.setAttribute("id","gameBox");
+
+  var row0 = document.createElement("div");
+  row0.setAttribute("class","row");
+  col00 = document.createElement("span");
+  col00.setAttribute("class","square1");
+  col00.innerHTML=array[0][0];
+  col01 = document.createElement("span");
+  col01.setAttribute("class","square2");
+  col01.innerHTML=array[0][1];
+  col02 = document.createElement("span");
+  col02.setAttribute("class","square3");
+  col02.innerHTML=array[0][2];
+
+  var row1 = document.createElement("div");
+  row1.setAttribute("class","row");
+  col10 = document.createElement("span");
+  col10.setAttribute("class","square1");
+  col10.innerHTML=array[1][0];
+  col11 = document.createElement("span");
+  col11.setAttribute("class","square2");
+  col11.innerHTML=array[1][1];
+  col12 = document.createElement("span");
+  col12.setAttribute("class","square3");
+  col12.innerHTML=array[1][2];
+
+  var row2 = document.createElement("div");
+  row0.setAttribute("class","row");
+  col20 = document.createElement("span");
+  col20.setAttribute("class","square1");
+  col20.innerHTML=array[2][0];
+  col21 = document.createElement("span");
+  col21.setAttribute("class","square2");
+  col21.innerHTML=array[2][1];
+  col22 = document.createElement("span");
+  col22.setAttribute("class","square3");
+  col22.innerHTML=array[2][2];
+
+  row0.appendChild(col00);
+  row0.appendChild(col01);
+  row0.appendChild(col02);
+  row1.appendChild(col10);
+  row1.appendChild(col11);
+  row1.appendChild(col12);
+  row2.appendChild(col20);
+  row2.appendChild(col21);
+  row2.appendChild(col22);
+
+  endGameBox.appendChild(row0);
+  endGameBox.appendChild(row1);
+  endGameBox.appendChild(row2);
+  container.appendChild(endGameBox);
 }
 function compMove()
 {
@@ -1172,7 +1278,7 @@ function compMove()
     // }
   }
   //right middle
-  if (array[1][0] === player2Symbol)
+  if (array[1][2] === player2Symbol)
   {
     if (array[0][2] === "")
     {
@@ -1252,98 +1358,106 @@ function compMove()
     // }
   }
   //if nothing still matches
-  do
+  if (first)
   {
-    var move = Math.floor(Math.random()*9);
-    if (move === 0)
+    first=false;
+    // array[1][2] = player2Symbol;
+    // col12.innerHTML=player2Symbol;
+    // console.log(array);
+    do
     {
-      if (array[0][0] === "")
+      console.log("infinite?");
+      var move = Math.floor(Math.random()*9);
+      if (move === 0)
       {
-        array[0][0] = player2Symbol;
-        col00.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[0][0] === "")
+        {
+          array[0][0] = player2Symbol;
+          col00.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 1)
-    {
-      if (array[0][1] === "")
+      if (move === 1)
       {
-        array[0][1] = player2Symbol;
-        col01.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[0][1] === "")
+        {
+          array[0][1] = player2Symbol;
+          col01.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 2)
-    {
-      if (array[0][2] === "")
+      if (move === 2)
       {
-        array[0][2] = player2Symbol;
-        col02.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[0][2] === "")
+        {
+          array[0][2] = player2Symbol;
+          col02.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 3)
-    {
-      if (array[1][0] === "")
+      if (move === 3)
       {
-        array[1][0] = player2Symbol;
-        col10.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[1][0] === "")
+        {
+          array[1][0] = player2Symbol;
+          col10.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 4)
-    {
-      if (array[1][1] === "")
+      if (move === 4)
       {
-        array[1][1] = player2Symbol;
-        col11.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[1][1] === "")
+        {
+          array[1][1] = player2Symbol;
+          col11.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 5)
-    {
-      if (array[1][2] === "")
+      if (move === 5)
       {
-        array[1][2] = player2Symbol;
-        col12.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[1][2] === "")
+        {
+          array[1][2] = player2Symbol;
+          col12.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 6)
-    {
-      if (array[2][0] === "")
+      if (move === 6)
       {
-        array[2][0] = player2Symbol;
-        col20.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[2][0] === "")
+        {
+          array[2][0] = player2Symbol;
+          col20.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 7)
-    {
-      if (array[2][1] === "")
+      if (move === 7)
       {
-        array[2][1] = player2Symbol;
-        col21.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[2][1] === "")
+        {
+          array[2][1] = player2Symbol;
+          col21.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-    if (move === 8)
-    {
-      if (array[2][2] === "")
+      if (move === 8)
       {
-        array[2][2] = player2Symbol;
-        col22.innerHTML=player2Symbol;
-        console.log(array);
-        break;
+        if (array[2][2] === "")
+        {
+          array[2][2] = player2Symbol;
+          col22.innerHTML=player2Symbol;
+          console.log(array);
+          break;
+        }
       }
-    }
-  } while (true);
+    } while (true);
+  }
 }

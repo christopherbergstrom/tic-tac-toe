@@ -56,6 +56,11 @@ body
   color: #00ccff;
   cursor: pointer;
 }
+#alert
+{
+  font-size: 3em;
+  margin: 1em;
+}
 .row
 {
   /*position: relative;*/
