@@ -19,8 +19,6 @@ var win = false;
 window.onload = function()
 {
   array = [["","",""],["","",""],["","",""],];
-  // array[2][2] = "a";
-  // console.log(array);
   whichTurn=1;
   console.log("loaded");
   container = document.getElementById("container");
@@ -68,8 +66,8 @@ function askQuestions()
     x.innerHTML="X";
     x.addEventListener("click", function()
     {
-      player1Symbol="X";
-      player2Symbol="O";
+      player1Symbol="x.png";
+      player2Symbol="o.png";
       console.log(player1Symbol);
       console.log(player2Symbol);
       createBoard(questionBox);
@@ -79,8 +77,8 @@ function askQuestions()
     o.innerHTML="O";
     o.addEventListener("click", function()
     {
-      player1Symbol="O";
-      player2Symbol="X";
+      player1Symbol="o.png";
+      player2Symbol="x.png";
       console.log(player1Symbol);
       console.log(player2Symbol);
       createBoard(questionBox);
@@ -98,12 +96,11 @@ function createBoard(questionBox)
   row0.setAttribute("class","row");
   col00 = document.createElement("span");
   col00.setAttribute("class","square1");
-  col00.setAttribute("id","topLeft");
   col00.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[0][0] === "")
     {
-      col00.innerHTML=player1Symbol;
+      col00.style.backgroundImage = "url("+player1Symbol+")";
       array[0][0]=player1Symbol;
       checkWin();
       if (!win)
@@ -116,12 +113,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col00.innerHTML=player1Symbol;
+        col00.style.backgroundImage = "url("+player1Symbol+")";
         array[0][0]=player1Symbol;
       }
       else
       {
-        col00.innerHTML=player2Symbol;
+        col00.style.backgroundImage = "url("+player2Symbol+")";
         array[0][0]=player2Symbol;
       }
       whichTurn++;
@@ -135,7 +132,7 @@ function createBoard(questionBox)
   {
     if (numPlayers === 1 && array[0][1] === "")
     {
-      col01.innerHTML=player1Symbol;
+      col01.style.backgroundImage = "url("+player1Symbol+")";
       array[0][1]=player1Symbol;
       checkWin();
       if (!win)
@@ -148,12 +145,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col01.innerHTML=player1Symbol;
+        col01.style.backgroundImage = "url("+player1Symbol+")";
         array[0][1]=player1Symbol;
       }
       else
       {
-        col01.innerHTML=player2Symbol;
+        col01.style.backgroundImage = "url("+player2Symbol+")";
         array[0][1]=player2Symbol;
       }
       whichTurn++;
@@ -163,14 +160,13 @@ function createBoard(questionBox)
   });
   col02 = document.createElement("span");
   col02.setAttribute("class","square3");
-  col02.setAttribute("id","topRight");
   col02.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[0][2] === "")
     {
       console.log("here");
       console.log(array[0][2]);
-      col02.innerHTML=player1Symbol;
+      col02.style.backgroundImage = "url("+player1Symbol+")";
       array[0][2]=player1Symbol;
       checkWin();
       if (!win)
@@ -183,12 +179,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col02.innerHTML=player1Symbol;
+        col02.style.backgroundImage = "url("+player1Symbol+")";
         array[0][2]=player1Symbol;
       }
       else
       {
-        col02.innerHTML=player2Symbol;
+        col02.style.backgroundImage = "url("+player2Symbol+")";
         array[0][2]=player2Symbol;
       }
       whichTurn++;
@@ -201,14 +197,14 @@ function createBoard(questionBox)
   row0.appendChild(col02);
 
   var row1 = document.createElement("div");
-  row1.setAttribute("class","row");
+  row1.setAttribute("id","rowMiddle");
   col10 = document.createElement("span");
   col10.setAttribute("class","square1");
   col10.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[1][0] === "")
     {
-      col10.innerHTML=player1Symbol;
+      col10.style.backgroundImage = "url("+player1Symbol+")";
       array[1][0]=player1Symbol;
       checkWin();
       if (!win)
@@ -221,12 +217,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col10.innerHTML=player1Symbol;
+        col10.style.backgroundImage = "url("+player1Symbol+")";
         array[1][0]=player1Symbol;
       }
       else
       {
-        col10.innerHTML=player2Symbol;
+        col10.style.backgroundImage = "url("+player2Symbol+")";
         array[1][0]=player2Symbol;
       }
       whichTurn++;
@@ -236,12 +232,11 @@ function createBoard(questionBox)
   });
   col11 = document.createElement("span");
   col11.setAttribute("class","square2");
-  col11.setAttribute("id","middle");
   col11.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[1][1] === "")
     {
-      col11.innerHTML=player1Symbol;
+      col11.style.backgroundImage = "url("+player1Symbol+")";
       array[1][1]=player1Symbol;
       checkWin();
       if (!win)
@@ -254,12 +249,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col11.innerHTML=player1Symbol;
+        col11.style.backgroundImage = "url("+player1Symbol+")";
         array[1][1]=player1Symbol;
       }
       else
       {
-        col11.innerHTML=player2Symbol;
+        col11.style.backgroundImage = "url("+player2Symbol+")";
         array[1][1]=player2Symbol;
       }
       whichTurn++;
@@ -273,7 +268,7 @@ function createBoard(questionBox)
   {
     if (numPlayers === 1 && array[1][2] === "")
     {
-      col12.innerHTML=player1Symbol;
+      col12.style.backgroundImage = "url("+player1Symbol+")";
       array[1][2]=player1Symbol;
       checkWin();
       if (!win)
@@ -286,12 +281,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col12.innerHTML=player1Symbol;
+        col12.style.backgroundImage = "url("+player1Symbol+")";
         array[1][2]=player1Symbol;
       }
       else
       {
-        col12.innerHTML=player2Symbol;
+        col12.style.backgroundImage = "url("+player2Symbol+")";
         array[1][2]=player2Symbol;
       }
       whichTurn++;
@@ -307,12 +302,11 @@ function createBoard(questionBox)
   row2.setAttribute("class","row");
   col20 = document.createElement("span");
   col20.setAttribute("class","square1");
-  col20.setAttribute("id","bottomLeft");
   col20.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[2][0] === "")
     {
-      col20.innerHTML=player1Symbol;
+      col20.style.backgroundImage = "url("+player1Symbol+")";
       array[2][0]=player1Symbol;
       checkWin();
       if (!win)
@@ -325,12 +319,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col20.innerHTML=player1Symbol;
+        col20.style.backgroundImage = "url("+player1Symbol+")";
         array[2][0]=player1Symbol;
       }
       else
       {
-        col20.innerHTML=player2Symbol;
+        col20.style.backgroundImage = "url("+player2Symbol+")";
         array[2][0]=player2Symbol;
       }
       whichTurn++;
@@ -344,7 +338,7 @@ function createBoard(questionBox)
   {
     if (numPlayers === 1 && array[2][1] === "")
     {
-      col21.innerHTML=player1Symbol;
+      col21.style.backgroundImage = "url("+player1Symbol+")";
       array[2][1]=player1Symbol;
       checkWin();
       if (!win)
@@ -357,12 +351,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col21.innerHTML=player1Symbol;
+        col21.style.backgroundImage = "url("+player1Symbol+")";
         array[2][1]=player1Symbol;
       }
       else
       {
-        col21.innerHTML=player2Symbol;
+        col21.style.backgroundImage = "url("+player2Symbol+")";
         array[2][1]=player2Symbol;
       }
       whichTurn++;
@@ -372,12 +366,11 @@ function createBoard(questionBox)
   });
   col22 = document.createElement("span");
   col22.setAttribute("class","square3");
-  col22.setAttribute("id","bottomRight");
   col22.addEventListener("click", function mark()
   {
     if (numPlayers === 1 && array[2][2] === "")
     {
-      col22.innerHTML=player1Symbol;
+      col22.style.backgroundImage = "url("+player1Symbol+")";
       array[2][2]=player1Symbol;
       checkWin();
       if (!win)
@@ -390,12 +383,12 @@ function createBoard(questionBox)
     {
       if (whichTurn%2 !== 0)
       {
-        col22.innerHTML=player1Symbol;
+        col22.style.backgroundImage = "url("+player1Symbol+")";
         array[2][2]=player1Symbol;
       }
       else
       {
-        col22.innerHTML=player2Symbol;
+        col22.style.backgroundImage = "url("+player2Symbol+")";
         array[2][2]=player2Symbol;
       }
       whichTurn++;
@@ -634,37 +627,37 @@ function deleteBoard()
   row0.setAttribute("class","row");
   col00 = document.createElement("span");
   col00.setAttribute("class","square1");
-  col00.innerHTML=array[0][0];
+  col00.style.backgroundImage = "url("+array[0][0]+")";
   col01 = document.createElement("span");
   col01.setAttribute("class","square2");
-  col01.innerHTML=array[0][1];
+  col01.style.backgroundImage = "url("+array[0][1]+")";
   col02 = document.createElement("span");
   col02.setAttribute("class","square3");
-  col02.innerHTML=array[0][2];
+  col02.style.backgroundImage = "url("+array[0][2]+")";
 
   var row1 = document.createElement("div");
-  row1.setAttribute("class","row");
+  row1.setAttribute("id","rowMiddle");
   col10 = document.createElement("span");
   col10.setAttribute("class","square1");
-  col10.innerHTML=array[1][0];
+  col10.style.backgroundImage = "url("+array[1][0]+")";
   col11 = document.createElement("span");
   col11.setAttribute("class","square2");
-  col11.innerHTML=array[1][1];
+  col11.style.backgroundImage = "url("+array[1][1]+")";
   col12 = document.createElement("span");
   col12.setAttribute("class","square3");
-  col12.innerHTML=array[1][2];
+  col12.style.backgroundImage = "url("+array[1][2]+")";
 
   var row2 = document.createElement("div");
   row0.setAttribute("class","row");
   col20 = document.createElement("span");
   col20.setAttribute("class","square1");
-  col20.innerHTML=array[2][0];
+  col20.style.backgroundImage = "url("+array[2][0]+")";
   col21 = document.createElement("span");
   col21.setAttribute("class","square2");
-  col21.innerHTML=array[2][1];
+  col21.style.backgroundImage = "url("+array[2][1]+")";
   col22 = document.createElement("span");
   col22.setAttribute("class","square3");
-  col22.innerHTML=array[2][2];
+  col22.style.backgroundImage = "url("+array[2][2]+")";
 
   row0.appendChild(col00);
   row0.appendChild(col01);
@@ -689,21 +682,21 @@ function compMove()
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player2Symbol && array[0][2] === player2Symbol && array[0][1] === "")
   {
     console.log("here");
     array[0][1]=player2Symbol;
-    col01.innerHTML=player2Symbol;
+    col01.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][1] === player2Symbol && array[0][2] === player2Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //middle horazontal
@@ -711,21 +704,21 @@ function compMove()
   {
     console.log("here");
     array[1][2]=player2Symbol;
-    col12.innerHTML=player2Symbol;
+    col12.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][0] === player2Symbol && array[1][2] === player2Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player2Symbol && array[1][2] === player2Symbol && array[1][0] === "")
   {
     console.log("here");
     array[1][0]=player2Symbol;
-    col10.innerHTML=player2Symbol;
+    col10.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //bottom
@@ -733,21 +726,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[2][0] === player2Symbol && array[2][2] === player2Symbol && array[2][1] === "")
   {
     console.log("here");
     array[2][1]=player2Symbol;
-    col21.innerHTML=player2Symbol;
+    col21.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[2][1] === player2Symbol && array[2][2] === player2Symbol && array[2][0] === "")
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //left
@@ -755,21 +748,21 @@ function compMove()
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player2Symbol && array[2][0] === player2Symbol && array[1][0] === "")
   {
     console.log("here");
     array[1][0]=player2Symbol;
-    col10.innerHTML=player2Symbol;
+    col10.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][0] === player2Symbol && array[2][0] === player2Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //middle vertical
@@ -777,21 +770,21 @@ function compMove()
   {
     console.log("here");
     array[2][1]=player2Symbol;
-    col21.innerHTML=player2Symbol;
+    col21.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][1] === player2Symbol && array[2][1] === player2Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player2Symbol && array[2][1] === player2Symbol && array[0][1] === "")
   {
     console.log("here");
     array[0][1]=player2Symbol;
-    col01.innerHTML=player2Symbol;
+    col01.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //right
@@ -799,21 +792,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][2] === player2Symbol && array[2][2] === player2Symbol && array[1][2] === "")
   {
     console.log("here");
     array[1][2]=player2Symbol;
-    col12.innerHTML=player2Symbol;
+    col12.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][2] === player2Symbol && array[2][2] === player2Symbol && array[0][2] === "")
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //diagonal top left to bottom right
@@ -821,21 +814,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player2Symbol && array[2][2] === player2Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player2Symbol && array[2][2] === player2Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //diagonal top right to bottom left
@@ -843,21 +836,21 @@ function compMove()
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][2] === player2Symbol && array[2][0] === player2Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player2Symbol && array[2][0] === player2Symbol && array[0][2] === "")
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //top check for player
@@ -865,21 +858,21 @@ function compMove()
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player1Symbol && array[0][2] === player1Symbol && array[0][1] === "")
   {
     console.log("here");
     array[0][1]=player2Symbol;
-    col01.innerHTML=player2Symbol;
+    col01.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][1] === player1Symbol && array[0][2] === player1Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //middle horazontal
@@ -887,21 +880,21 @@ function compMove()
   {
     console.log("here");
     array[1][2]=player2Symbol;
-    col12.innerHTML=player2Symbol;
+    col12.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][0] === player1Symbol && array[1][2] === player1Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player1Symbol && array[1][2] === player1Symbol && array[1][0] === "")
   {
     console.log("here");
     array[1][0]=player2Symbol;
-    col10.innerHTML=player2Symbol;
+    col10.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //bottom
@@ -909,21 +902,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[2][0] === player1Symbol && array[2][2] === player1Symbol && array[2][1] === "")
   {
     console.log("here");
     array[2][1]=player2Symbol;
-    col21.innerHTML=player2Symbol;
+    col21.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[2][1] === player1Symbol && array[2][2] === player1Symbol && array[2][0] === "")
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //left
@@ -931,21 +924,21 @@ function compMove()
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player1Symbol && array[2][0] === player1Symbol && array[1][0] === "")
   {
     console.log("here");
     array[1][0]=player2Symbol;
-    col10.innerHTML=player2Symbol;
+    col10.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][0] === player1Symbol && array[2][0] === player1Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //middle vertical
@@ -953,21 +946,21 @@ function compMove()
   {
     console.log("here");
     array[2][1]=player2Symbol;
-    col21.innerHTML=player2Symbol;
+    col21.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][1] === player1Symbol && array[2][1] === player1Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player1Symbol && array[2][1] === player1Symbol && array[0][1] === "")
   {
     console.log("here");
     array[0][1]=player2Symbol;
-    col01.innerHTML=player2Symbol;
+    col01.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //right
@@ -975,21 +968,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][2] === player1Symbol && array[2][2] === player1Symbol && array[1][2] === "")
   {
     console.log("here");
     array[1][2]=player2Symbol;
-    col12.innerHTML=player2Symbol;
+    col12.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][2] === player1Symbol && array[2][2] === player1Symbol && array[0][2] === "")
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //diagonal top left to bottom right
@@ -997,21 +990,21 @@ function compMove()
   {
     console.log("here");
     array[2][2]=player2Symbol;
-    col22.innerHTML=player2Symbol;
+    col22.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][0] === player1Symbol && array[2][2] === player1Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player1Symbol && array[2][2] === player1Symbol && array[0][0] === "")
   {
     console.log("here");
     array[0][0]=player2Symbol;
-    col00.innerHTML=player2Symbol;
+    col00.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //diagonal top right to bottom left
@@ -1019,21 +1012,21 @@ function compMove()
   {
     console.log("here");
     array[2][0]=player2Symbol;
-    col20.innerHTML=player2Symbol;
+    col20.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[0][2] === player1Symbol && array[2][0] === player1Symbol && array[1][1] === "")
   {
     console.log("here");
     array[1][1]=player2Symbol;
-    col11.innerHTML=player2Symbol;
+    col11.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   else if (array[1][1] === player1Symbol && array[2][0] === player1Symbol && array[0][2] === "")
   {
     console.log("here");
     array[0][2]=player2Symbol;
-    col02.innerHTML=player2Symbol;
+    col02.style.backgroundImage = "url("+player2Symbol+")";
     return;
   }
   //if nothing matches
@@ -1044,56 +1037,56 @@ function compMove()
     {
       console.log("here");
       array[0][0]=player2Symbol;
-      col00.innerHTML=player2Symbol;
+      col00.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[0][1] === "")
     {
       console.log("here");
       array[0][1]=player2Symbol;
-      col01.innerHTML=player2Symbol;
+      col01.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[0][2] === "")
     {
       console.log("here");
       array[0][2]=player2Symbol;
-      col02.innerHTML=player2Symbol;
+      col02.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][0] === "")
     {
       console.log("here");
       array[1][0]=player2Symbol;
-      col10.innerHTML=player2Symbol;
+      col10.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][2] === "")
     {
       console.log("here");
       array[1][2]=player2Symbol;
-      col12.innerHTML=player2Symbol;
+      col12.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][0] === "")
     {
       console.log("here");
       array[2][0]=player2Symbol;
-      col20.innerHTML=player2Symbol;
+      col20.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][1] === "")
     {
       console.log("here");
       array[2][1]=player2Symbol;
-      col21.innerHTML=player2Symbol;
+      col21.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][2] === "")
     {
       console.log("here");
       array[2][2]=player2Symbol;
-      col22.innerHTML=player2Symbol;
+      col22.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
   }
@@ -1104,21 +1097,21 @@ function compMove()
     {
       console.log("here");
       array[0][1]=player2Symbol;
-      col01.innerHTML=player2Symbol;
+      col01.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][0] === "")
     {
       console.log("here");
       array[1][0]=player2Symbol;
-      col10.innerHTML=player2Symbol;
+      col10.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
   }
@@ -1129,21 +1122,21 @@ function compMove()
     {
       console.log("here");
       array[0][1]=player2Symbol;
-      col01.innerHTML=player2Symbol;
+      col01.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][2] === "")
     {
       console.log("here");
       array[1][2]=player2Symbol;
-      col12.innerHTML=player2Symbol;
+      col12.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
   }
@@ -1154,21 +1147,21 @@ function compMove()
     {
       console.log("here");
       array[1][0]=player2Symbol;
-      col10.innerHTML=player2Symbol;
+      col10.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][1] === "")
     {
       console.log("here");
       array[2][1]=player2Symbol;
-      col21.innerHTML=player2Symbol;
+      col21.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
   }
@@ -1179,21 +1172,21 @@ function compMove()
     {
       console.log("here");
       array[1][2]=player2Symbol;
-      col12.innerHTML=player2Symbol;
+      col12.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][1] === "")
     {
       console.log("here");
       array[2][1]=player2Symbol;
-      col21.innerHTML=player2Symbol;
+      col21.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
   }
@@ -1204,21 +1197,21 @@ function compMove()
     {
       console.log("here");
       array[0][0]=player2Symbol;
-      col00.innerHTML=player2Symbol;
+      col00.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[0][2] === "")
     {
       console.log("here");
       array[0][2]=player2Symbol;
-      col02.innerHTML=player2Symbol;
+      col02.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     //odds
@@ -1226,14 +1219,14 @@ function compMove()
     // {
     //   console.log("here");
     //   array[1][0]=player2Symbol;
-    //   col10.innerHTML=player2Symbol;
+    //   col10.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
     // else if (array[1][2] === "")
     // {
     //   console.log("here");
     //   array[1][2]=player2Symbol;
-    //   col12.innerHTML=player2Symbol;
+    //   col12.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
   }
@@ -1244,21 +1237,21 @@ function compMove()
     {
       console.log("here");
       array[0][0]=player2Symbol;
-      col00.innerHTML=player2Symbol;
+      col00.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][0] === "")
     {
       console.log("here");
       array[2][0]=player2Symbol;
-      col20.innerHTML=player2Symbol;
+      col20.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     //odds
@@ -1266,14 +1259,14 @@ function compMove()
     // {
     //   console.log("here");
     //   array[0][1]=player2Symbol;
-    //   col01.innerHTML=player2Symbol;
+    //   col01.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
     // else if (array[2][1] === "")
     // {
     //   console.log("here");
     //   array[2][1]=player2Symbol;
-    //   col21.innerHTML=player2Symbol;
+    //   col21.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
   }
@@ -1284,21 +1277,21 @@ function compMove()
     {
       console.log("here");
       array[0][2]=player2Symbol;
-      col02.innerHTML=player2Symbol;
+      col02.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][2] === "")
     {
       console.log("here");
       array[2][2]=player2Symbol;
-      col22.innerHTML=player2Symbol;
+      col22.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     //odds
@@ -1306,14 +1299,14 @@ function compMove()
     // {
     //   console.log("here");
     //   array[0][1]=player2Symbol;
-    //   col01.innerHTML=player2Symbol;
+    //   col01.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
     // else if (array[2][1] === "")
     // {
     //   console.log("here");
     //   array[2][1]=player2Symbol;
-    //   col21.innerHTML=player2Symbol;
+    //   col21.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
   }
@@ -1324,21 +1317,21 @@ function compMove()
     {
       console.log("here");
       array[2][0]=player2Symbol;
-      col20.innerHTML=player2Symbol;
+      col20.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[1][1] === "")
     {
       console.log("here");
       array[1][1]=player2Symbol;
-      col11.innerHTML=player2Symbol;
+      col11.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     else if (array[2][2] === "")
     {
       console.log("here");
       array[2][2]=player2Symbol;
-      col22.innerHTML=player2Symbol;
+      col22.style.backgroundImage = "url("+player2Symbol+")";
       return;
     }
     //odds
@@ -1346,14 +1339,14 @@ function compMove()
     // {
     //   console.log("here");
     //   array[1][0]=player2Symbol;
-    //   col10.innerHTML=player2Symbol;
+    //   col10.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
     // else if (array[1][2] === "")
     // {
     //   console.log("here");
     //   array[1][2]=player2Symbol;
-    //   col12.innerHTML=player2Symbol;
+    //   col12.style.backgroundImage = "url("+player2Symbol+")";
     //   return;
     // }
   }
@@ -1362,7 +1355,7 @@ function compMove()
   {
     first=false;
     // array[1][2] = player2Symbol;
-    // col12.innerHTML=player2Symbol;
+    // col12.style.backgroundImage = "url("+player2Symbol+")";
     // console.log(array);
     do
     {
@@ -1373,7 +1366,7 @@ function compMove()
         if (array[0][0] === "")
         {
           array[0][0] = player2Symbol;
-          col00.innerHTML=player2Symbol;
+          col00.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1383,7 +1376,7 @@ function compMove()
         if (array[0][1] === "")
         {
           array[0][1] = player2Symbol;
-          col01.innerHTML=player2Symbol;
+          col01.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1393,7 +1386,7 @@ function compMove()
         if (array[0][2] === "")
         {
           array[0][2] = player2Symbol;
-          col02.innerHTML=player2Symbol;
+          col02.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1403,7 +1396,7 @@ function compMove()
         if (array[1][0] === "")
         {
           array[1][0] = player2Symbol;
-          col10.innerHTML=player2Symbol;
+          col10.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1413,7 +1406,7 @@ function compMove()
         if (array[1][1] === "")
         {
           array[1][1] = player2Symbol;
-          col11.innerHTML=player2Symbol;
+          col11.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1423,7 +1416,7 @@ function compMove()
         if (array[1][2] === "")
         {
           array[1][2] = player2Symbol;
-          col12.innerHTML=player2Symbol;
+          col12.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1433,7 +1426,7 @@ function compMove()
         if (array[2][0] === "")
         {
           array[2][0] = player2Symbol;
-          col20.innerHTML=player2Symbol;
+          col20.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1443,7 +1436,7 @@ function compMove()
         if (array[2][1] === "")
         {
           array[2][1] = player2Symbol;
-          col21.innerHTML=player2Symbol;
+          col21.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }
@@ -1453,7 +1446,7 @@ function compMove()
         if (array[2][2] === "")
         {
           array[2][2] = player2Symbol;
-          col22.innerHTML=player2Symbol;
+          col22.style.backgroundImage = "url("+player2Symbol+")";
           console.log(array);
           break;
         }

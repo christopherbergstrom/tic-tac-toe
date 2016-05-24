@@ -33,13 +33,17 @@ body
 #gameBox
 {
   position: relative;
-  /*left: 50%;*/
-  margin-left: 50%;
-  margin-right: 50%;
+  left: 33%;
+  /*margin-left: 50%;*/
+  /*margin-right: 50%;*/
   color: white;
-  text-align: center;
-  width: 15em;
-  height: 15em;
+  /*text-align: center;*/
+  /*align-items: center;*/
+  justify-content: center;
+  /*width: 15em;*/
+  /*height: 15em;*/
+  width: 27em;
+  height: 27em;
 }
 #numberOfPlayers
 {
@@ -64,20 +68,31 @@ body
 .row
 {
   /*position: relative;*/
-  width: 15em;
-  height: 5em;
+  width: 27em;
+  height: 9em;
   /*left: 25%;*/
+}
+#rowMiddle
+{
+  /*position: relative;*/
+  width: 27em;
+  height: 9em;
+  /*left: 25%;*/
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
 }
 .square1
 {
   position: absolute;
   left: 0;
-  width: 5em;
-  height: 5em;
-  border: 3px solid white;
+  width: 9em;
+  height: 9em;
+  /*border: 3px solid white;*/
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-size: contain;
 }
 .square1:hover
 {
@@ -87,13 +102,16 @@ body
 .square2
 {
   position: absolute;
-  left: 5em;
-  width: 5em;
-  height: 5em;
-  border: 3px solid white;
+  left: 9em;
+  width: 9em;
+  height: 9em;
+  /*border: 3px solid white;*/
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-size: contain;
+  border-left: 3px solid white;
 }
 .square2:hover
 {
@@ -103,40 +121,19 @@ body
 .square3
 {
   position: absolute;
-  left: 10em;
-  width: 5em;
-  height: 5em;
-  border: 3px solid white;
+  left: 18em;
+  width: 9em;
+  height: 9em;
+  /*border: 3px solid white;*/
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  background-size: contain;
+  border-left: 3px solid white;
 }
 .square3:hover
 {
   background-color: grey;
   cursor: pointer;
 }
-/*#topLeft
-{
-  border-right: 3px solid white;
-  border-bottom: 3px solid white;
-}
-#topRight
-{
-  border-left: 3px solid white;
-  border-bottom: 3px solid white;
-}
-#middle
-{
-  border: 3px solid white;
-}
-#bottomLeft
-{
-  border-top: 3px solid white;
-  border-right: 3px solid white;
-}
-#bottomRight
-{
-  border-top: 3px solid white;
-  border-left: 3px solid white;
-}*/
