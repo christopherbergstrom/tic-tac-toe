@@ -16,8 +16,16 @@ var col21;
 var col22;
 var first = true;
 var win = false;
+var audio;
+var winNoise;
+var loseNoise;
+var tieNoise;
 window.onload = function()
 {
+  audio = document.getElementById("audio");
+  winNoise = document.getElementById("win");
+  loseNoise = document.getElementById("lose");
+  tieNoise = document.getElementById("tie");
   array = [["","",""],["","",""],["","",""],];
   whichTurn=1;
   console.log("loaded");
@@ -98,6 +106,7 @@ function createBoard(questionBox)
   col00.setAttribute("class","square1");
   col00.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[0][0] === "")
     {
       col00.style.backgroundImage = "url("+player1Symbol+")";
@@ -130,6 +139,7 @@ function createBoard(questionBox)
   col01.setAttribute("class","square2");
   col01.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[0][1] === "")
     {
       col01.style.backgroundImage = "url("+player1Symbol+")";
@@ -162,6 +172,7 @@ function createBoard(questionBox)
   col02.setAttribute("class","square3");
   col02.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[0][2] === "")
     {
       console.log("here");
@@ -202,6 +213,7 @@ function createBoard(questionBox)
   col10.setAttribute("class","square1");
   col10.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[1][0] === "")
     {
       col10.style.backgroundImage = "url("+player1Symbol+")";
@@ -234,6 +246,7 @@ function createBoard(questionBox)
   col11.setAttribute("class","square2");
   col11.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[1][1] === "")
     {
       col11.style.backgroundImage = "url("+player1Symbol+")";
@@ -266,6 +279,7 @@ function createBoard(questionBox)
   col12.setAttribute("class","square3");
   col12.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[1][2] === "")
     {
       col12.style.backgroundImage = "url("+player1Symbol+")";
@@ -304,6 +318,7 @@ function createBoard(questionBox)
   col20.setAttribute("class","square1");
   col20.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[2][0] === "")
     {
       col20.style.backgroundImage = "url("+player1Symbol+")";
@@ -336,6 +351,7 @@ function createBoard(questionBox)
   col21.setAttribute("class","square2");
   col21.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[2][1] === "")
     {
       col21.style.backgroundImage = "url("+player1Symbol+")";
@@ -368,6 +384,7 @@ function createBoard(questionBox)
   col22.setAttribute("class","square3");
   col22.addEventListener("click", function mark()
   {
+    audio.play();
     if (numPlayers === 1 && array[2][2] === "")
     {
       col22.style.backgroundImage = "url("+player1Symbol+")";
@@ -585,6 +602,14 @@ function checkWin()
   }
   if (win === true)
   {
+    if (who === "Player 1" || who === "Player 2")
+    {
+      winNoise.play()
+    }
+    else
+    {
+      loseNoise.play();
+    }
     deleteBoard();
     var alert = document.createElement("div");
     alert.setAttribute("id","alert");
@@ -601,6 +626,7 @@ function checkWin()
   }
   if (count === 9 && win === false)
   {
+    tieNoise.play();
     deleteBoard();
     var alert = document.createElement("div");
     alert.setAttribute("id","alert");
@@ -676,6 +702,7 @@ function deleteBoard()
 }
 function compMove()
 {
+  audio.play();
   console.log(array);
   //top check for comp
   if (array[0][0] === player2Symbol && array[0][1] === player2Symbol && array[0][2] === "")
