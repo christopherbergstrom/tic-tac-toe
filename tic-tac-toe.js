@@ -38,7 +38,7 @@ function askQuestions()
   questionBox.setAttribute("id","questionBox");
   var numberOfPlayers = document.createElement("div");
   numberOfPlayers.setAttribute("id","numberOfPlayers")
-  numberOfPlayers.innerHTML="Number of Players";
+  numberOfPlayers.innerHTML="Select Number of Players";
   var numberOfPlayersContainer = document.createElement("div");
   var onePlayer = document.createElement("span");
   onePlayer.setAttribute("class","button");
